@@ -3,7 +3,9 @@ class Task < ActiveRecord::Base
 
   belongs_to :project
 
-  def self.find_incomplete
-  	find_all_by_complete(false, :order =>'created_at DESC')
+  def self.find_incomplete(options={})
+  	with_scope :find => options do
+	  	find_all_by_complete(false)
+	  end
   end
 end
