@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RailsCastDemo</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-	<h1>Application Layout!</h1>
-	<%= yield %>
-
-</body>
+	<head>
+	  <title>Railscastdemo</title>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="container">
+			<h1>Application Layout: To-do List</h1>
+			<%= yield %>
+		</div>
+	</body>
 </html>

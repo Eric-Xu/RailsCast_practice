@@ -1,6 +1,10 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'projects' %>
+<% end %>
+
 <h2>Projects</h2>
 <ul>
   <% for project in @projects %>
-  	<li><%= project.name %></li>
+    <li><%= project.name %></li>
   <% end %>
 </ul>
