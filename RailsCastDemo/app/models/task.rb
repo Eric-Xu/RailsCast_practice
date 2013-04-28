@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :complete, :name, :project_id
+  attr_accessible :complete, :name, :project_id, :priority
 
   belongs_to :project
 
