@@ -3,6 +3,10 @@ class Task < ActiveRecord::Base
 
   belongs_to :project
 
+  def category_name
+  	read_attribute("category_name") || category.name
+  end
+
   def self.find_incomplete(options={})
   	with_scope :find => options do
 	  	find_all_by_complete(false)

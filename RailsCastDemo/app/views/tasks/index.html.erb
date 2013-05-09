@@ -1,5 +1,11 @@
-<ul>
-<% @tasks.each do |task| %>
-<li><%= task.name %></li>
-<% end %>
-</ul>
+<h3>Tasks</h3>
+
+<table>
+	<% for task in @tasks %>
+		<tr>
+			<td><%= link_to task.name, task_path(task) %></td>
+			<!-- <td><small>in <%= task.project.name %></small></td> -->
+			<td><small>in <%= task.project_name %></small></td>
+		</tr>
+	<% end %>
+</table>

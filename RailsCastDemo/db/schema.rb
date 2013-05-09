@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20130428060415) do
     t.integer  "priority"
   end
 
+  add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
+
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "middle_initial"
