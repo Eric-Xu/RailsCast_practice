@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
   attr_accessible :complete, :name, :project_id, :priority
 
-  belongs_to :project
+  belongs_to :project, :counter_cache => true
 
   def category_name
   	read_attribute("category_name") || category.name
