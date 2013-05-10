@@ -3,14 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-	background-color: yellow;
+	background-color: #81d8d0;
 }
 
 #container {
-	border: black thin solid;
-	background-color: orange;
-	width: 400;
+	border: thin solid #ecf9f8;
 	margin-right: auto;
 	margin-left: auto;
 	padding: 20px;
+}
+
+h2 {
+	color: #ecf9f8;
 }

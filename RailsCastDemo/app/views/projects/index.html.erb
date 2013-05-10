@@ -3,8 +3,11 @@
 <% end %>
 
 <h2>Projects</h2>
-<ul>
-  <% for project in @projects %>
-    <li><%= project.name %></li>
-  <% end %>
-</ul>
+<table>
+<% for project in @projects %>
+	<tr>
+		<td><%= link_to project.name, project_path(project) %></td>
+		<td><small>(<%= pluralize project.tasks.size, 'task' %>)</small></td>
+	</tr>
+<% end %>
+</table>
