@@ -1,9 +1,11 @@
-<h1>Users List</h1>
+<h3>Users List</h3>
 
-<ul>
-	<% for user in @users %>
-	  <li>
-	  	<%= link_to user.full_name, user_path(user) %>
-	  </li>
-	<% end %>
-</ul>
+<table>
+	<% @users.in_groups_of(3, false) do |row_users| %>
+	  <tr>
+			<% for user in row_users %>
+		  	<td><%= link_to user.full_name, user_path(user) %></td>
+			<% end %>
+	  </tr>
+  <% end %>
+</table>
