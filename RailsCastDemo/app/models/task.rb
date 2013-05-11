@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :complete, :name, :project_id, :priority
+  attr_accessible :complete, :name, :project_id, :priority, :due_at
 
   belongs_to :project, :counter_cache => true
 

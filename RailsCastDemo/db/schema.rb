@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130510050437) do
+ActiveRecord::Schema.define(:version => 20130511223858) do
 
   create_table "projects", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130510050437) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "priority"
+    t.datetime "due_at"
   end
 
   add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
