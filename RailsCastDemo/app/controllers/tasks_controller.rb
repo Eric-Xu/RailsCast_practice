@@ -1,9 +1,11 @@
 class TasksController < ApplicationController
 	def index
 		#@tasks = Task.find_incomplete
-		#@tasks = Task.all(:include => :project)
+		@tasks = Task.all(:include => :project)
 		#@tasks = Task.order("projects.name").includes(:project)
-		@tasks = Task.order("projects.name").joins(:project).select("tasks.*, projects.name as project_name")
+		#@tasks = Task.order("projects.name").joins(:project).select("tasks.*, projects.name as project_name")
+		#Ep29: group_by_month
+		@task_months = @tasks.group_by { |t| t.created_at.beginning_of_month } #END Ep29: group_by_month
 	end
 
 	def incomplete

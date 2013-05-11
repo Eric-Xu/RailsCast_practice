@@ -1,11 +1,17 @@
 <h3>Tasks</h3>
 
-<table>
-	<% for task in @tasks %>
-		<tr>
-			<td><%= link_to task.name, task_path(task) %></td>
-			<!-- <td><small>in <%= task.project.name %></small></td> -->
-			<td><small>in <%= task.project_name %></small></td>
-		</tr>
-	<% end %>
-</table>
+<% @task_months.each do |month, tasks| %>
+	<h4><%= month.strftime("%B %Y") %></h4>
+	<table>
+	  <% tasks.each do |task| %>
+	    <tr>
+	    	<td>
+	    		<b><%= link_to task.name, task_path(task) %></b>
+					<!-- <small>in <%= task.project.name %></small> -->
+		    	<small> in <%= task.project.name %></small>
+		    	( created on <%= task.created_at.to_date.to_s(:long) %>)
+		    </td>
+		  </tr>
+	  <% end %>
+  </table>
+<% end %>
