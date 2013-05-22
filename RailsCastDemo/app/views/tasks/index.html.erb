@@ -7,9 +7,9 @@
 	    <tr>
 	    	<td>
 	    		<b><%= link_to task.name, task_path(task) %></b>
-					<!-- <small>in <%= task.project.name %></small> -->
 		    	<small> in <%= task.project.name %></small>
-		    	( due on <%= task.due_at.to_date.to_s(:long) %>)
+		    	<!-- ( due on <%#= task.due_at.to_date.to_s(:long) %>) -->
+		    	(due on <%= task.due_at.to_s(:due_date) %>)
 		    </td>
 		  </tr>
 	  <% end %>
