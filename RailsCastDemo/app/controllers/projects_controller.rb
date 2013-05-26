@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
 	layout :user_layout
 
 	def index
-		@projects = Project.find(:all, :conditions => ["name LIKE ?", "%" + params[:search] + "%"], :limit => 3)
+		# Episode 37 Simple Search Form
+		@projects = Project.search(params[:search])
 		# use the projects layout only for this action
 		render :layout => 'projects'
 	end
