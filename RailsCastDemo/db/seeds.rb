@@ -1,7 +1,7 @@
-Project.create(name: "project 1")
-Project.create(name: "project 2")
-Project.create(name: "project 3")
-Project.create(name: "project 4")
+Project.create(name: "Vegetable Garden", description: "3 sisters - corn, pole beans, squash")
+Project.create(name: "Moon Landing", description: "One small step for man, one giant leap for mankind.")
+Project.create(name: "Learn karate", description: "Wax on, wax off.")
+Project.create(name: "Rescue Princess", description: "It's a me, Mario")
 
 Task.create(name: "task 1", project_id: 1, complete: true, priority: 1, due_at: "2013-1-1")
 Task.create(name: "task 2", project_id: 1, complete: false, priority: 2, due_at: "2013-1-10")
