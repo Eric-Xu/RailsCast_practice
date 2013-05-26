@@ -1,6 +1,20 @@
 class ProjectsController < ApplicationController
 	layout :user_layout
 
+	def new
+		@project = Project.new
+	end
+
+	def create
+		@project = Project.new(params[:project])
+		if @project.save
+			flash[:notice] = "Successfully created project!"
+			redirect_to project_path(@project)
+		else
+			render :new
+		end
+	end
+
 	def index
 		# Episode 37 Simple Search Form
 		@projects = Project.search(params[:search])
