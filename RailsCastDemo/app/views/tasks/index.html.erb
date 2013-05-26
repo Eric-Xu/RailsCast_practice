@@ -10,6 +10,7 @@
 		    	<small> in <%= task.project.name %></small>
 		    	<!-- ( due on <%#= task.due_at.to_date.to_s(:long) %>) -->
 		    	(due on <%= task.due_at.to_s(:due_date) %>)
+		    	| <%= link_to "Mark as Complete", complete_task_path(task), method: :put %>
 		    </td>
 		  </tr>
 	  <% end %>

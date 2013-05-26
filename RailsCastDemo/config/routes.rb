@@ -5,6 +5,9 @@ RailsCastDemo::Application.routes.draw do
   	collection do
   		get 'completed'
   	end
+  	member do
+  		put 'complete'
+  	end
   end
   #resources :tasks
   resources :projects

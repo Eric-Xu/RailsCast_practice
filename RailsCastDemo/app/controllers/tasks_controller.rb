@@ -27,7 +27,10 @@ class TasksController < ApplicationController
 
 	# Episode 15 Custom REST Actions
 	def complete
-
+		@task = Task.find(params[:id])
+		@task.update_attribute(:complete, true)
+		flash[:notice] = "Successfully marked task as complete."
+		redirect_to completed_tasks_path
 	end
 
 	def completed
