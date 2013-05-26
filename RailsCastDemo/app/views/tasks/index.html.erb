@@ -1,5 +1,5 @@
 <h3>Incomplete Tasks</h3>
-
+<hr>
 <% @task_months.each do |month, tasks| %>
 	<h4><%= month.strftime("%B %Y") %></h4>
 	<table>
@@ -15,3 +15,7 @@
 	  <% end %>
   </table>
 <% end %>
+
+<hr>
+<%= link_to "Add A New Task", new_task_path %>
+| <%= link_to "Completed Tasks", completed_tasks_path %>

@@ -24,4 +24,15 @@ class TasksController < ApplicationController
 
 		# Task.find_all_by_priority(1..3)
 		# SELECT "tasks".* FROM "tasks" WHERE ("tasks"."priority" BETWEEN 1 AND 3)
+
+	# Episode 15 Custom REST Actions
+	def complete
+
+	end
+
+	def completed
+		@tasks = Task.find(:all, :conditions => 'complete = "t"')
+		#@tasks = Task.find_all_by_complete(true)
+	end
+	# end Episode 15
 end
