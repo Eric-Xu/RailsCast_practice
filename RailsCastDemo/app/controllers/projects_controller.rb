@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
 	def new
 		@project = Project.new
+		render :layout => 'projects'
 	end
 
 	def create
