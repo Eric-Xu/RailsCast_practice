@@ -3,6 +3,8 @@ class Project < ActiveRecord::Base
 
   has_many :tasks
 
+  validates :name, :description, presence: true
+
   def self.all_names
     find(:all).collect(&:name)
   end
