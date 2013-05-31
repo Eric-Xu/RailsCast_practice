@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.admin {
+	background-color: #FFEDC2;
+	border: solid 1px lightgrey;
+	padding: 5px 8px;
+	margin: 10px 0;
+}
+
 #notice, #error, #alert {
   padding: 5px 8px;
   margin: 10px 0;

@@ -4,4 +4,7 @@
 	<%= @user.full_name %>
 </P>
 <%= link_to 'Users List', users_path %>
-| <%= link_to 'Delete User', user_path(@user), method: :delete, confirm: "Click OK to delete current user" %>
+
+<% admin_area do %>
+	<%= link_to 'Delete User', user_path(@user), method: :delete, confirm: "Click OK to delete current user" %>
+<% end %>
