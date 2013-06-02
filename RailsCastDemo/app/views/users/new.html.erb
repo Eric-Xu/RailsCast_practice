@@ -1,4 +1,17 @@
+<h1>Create a New User</h1>
+
 <%= form_for @user do |f| %>
+	<% if @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Oops...Looks like you made <%= pluralize @user.errors.count, 'error' %></h2>
+			<ul>
+				<% @user.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 	<%= f.label :first_name %>
 	<%= f.text_field :first_name %><br>
 
