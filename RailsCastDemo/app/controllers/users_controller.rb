@@ -16,6 +16,21 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+		@user.updating_password = true # Ep 41 conditional validations
+
+		if @user.update_attributes(params[:user])
+			redirect_to user_path(@user), notice: "Successfully updated user"
+		else
+			render :edit
+		end
+	end
+
 	def show
 		@user = User.find(params[:id])
 	end

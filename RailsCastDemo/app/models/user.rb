@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :middle_initial, :password, :password_confirmation
 
-  validates_presence_of :first_name, :last_name
-  validates_presence_of :password, :password_confirmation
+  # Ep 41 Conditional Validations
+  validates_presence_of :first_name, :last_name, :on => :create
+  validates_presence_of :password, :password_confirmation, :if => :should_validate_password?
+  attr_accessor :updating_password
+  # End Ep 41
 
   def full_name
   	[first_name, middle_initial_with_full_stop, last_name].compact.join(" ")
@@ -10,5 +13,10 @@ class User < ActiveRecord::Base
 
   def middle_initial_with_full_stop
   	"#{middle_initial}." unless middle_initial.blank?
+  end
+
+  # Ep 41; set in the controller update action
+  def should_validate_password?
+  	updating_password || new_record?
   end
 end
