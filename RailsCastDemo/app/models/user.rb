@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :middle_initial, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :middle_initial, :email, :password, :password_confirmation
 
+  has_secure_password
+
+  validates_uniqueness_of :email
   # Ep 41 Conditional Validations
-  validates_presence_of :first_name, :last_name, :on => :create
-  validates_presence_of :password, :password_confirmation, :if => :should_validate_password?
+  validates_presence_of :first_name, :last_name, :email, :on => :create
+  validates_presence_of :password, :if => :should_validate_password?
   attr_accessor :updating_password
   # End Ep 41
 

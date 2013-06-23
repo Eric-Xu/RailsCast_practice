@@ -9,21 +9,31 @@
 			</ul>
 		</div>
 	<% end %>
-
-	<%= f.label :first_name %>
-	<%= f.text_field :first_name %><br>
-
-	<%= f.label :middle_initial %>
-	<%= f.text_field :middle_initial %><br>
-
-	<%= f.label :last_name %>
-	<%= f.text_field :last_name %><br>
-
-	<%= f.label :password %>
-	<%= f.password_field :password %><br>
-
-	<%= f.label :password_confirmation %>
-	<%= f.password_field :password_confirmation %><br>
-
-	<%= f.submit 'Submit It!' %>
+	<div class="field">
+		<%= f.label :first_name %>
+		<%= f.text_field :first_name %><br>
+	</div>
+	<div class="field">
+		<%= f.label :middle_initial %>
+		<%= f.text_field :middle_initial %><br>
+	</div>
+	<div class="field">
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name %><br>
+	</div>
+	<div class="field">
+		<%= f.label :email %>
+		<%= f.text_field :email %><br>
+	</div>
+	<div class="field">
+		<%= f.label :password %>
+		<%= f.password_field :password %><br>
+	</div>
+	<div class="field">
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %><br>
+	</div>
+	<div class="actions">
+		<%= f.submit 'Sign Up' %>
+	</div>
 <% end %>

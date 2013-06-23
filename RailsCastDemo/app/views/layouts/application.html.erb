@@ -11,6 +11,9 @@
 			<%= content_tag :p, msg, id: key %>
 		<% end %>
 		<div id="container">
+			<div class="user_header">
+				<%= link_to "Sign Up", new_user_path %>
+			</div>
 			<%= yield %>
 		</div>
 	</body>
