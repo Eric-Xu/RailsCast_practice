@@ -1,6 +1,7 @@
 RailsCastDemo::Application.routes.draw do
   resources :users
   resources :projects
+  resources :sessions
 
   # Episode 35 Custom REST Actions
   resources :tasks do
