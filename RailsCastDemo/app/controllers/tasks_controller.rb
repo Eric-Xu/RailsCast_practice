@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+	before_filter :authorize, only: :complete
+
 	def index
 		@tasks = Task.find_incomplete(:include => :project)
 		#@tasks = Task.all(:include => :project)
