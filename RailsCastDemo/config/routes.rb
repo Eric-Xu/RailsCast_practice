@@ -1,7 +1,11 @@
 RailsCastDemo::Application.routes.draw do
   resources :users
   resources :projects
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy]
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 
   # Episode 35 Custom REST Actions
   resources :tasks do
